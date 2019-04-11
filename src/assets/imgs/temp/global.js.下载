@@ -1,0 +1,243 @@
+//loading
+var images = [];
+(function(){
+	var imagesLoading = [];
+	imagesLoading.push("");
+	//开始加载图片
+	jQuery.imgpreload(imagesLoading,{
+		all: function(){
+	    	
+		}
+	});
+})();
+
+// 全局函数&变量
+var AllHeight = $(window).height();
+var AllWidth = $(window).width();
+var DHeight = document.documentElement.clientHeight;
+
+// 横竖屏幕提醒
+(function transverse(){
+	if(window.orientation == 90 || window.orientation == -90){
+		Main.hide();
+		$(".thwartwise").css("display","table-cell");
+		$('.thwartwise').width(DHeight);
+		$('.thwartwise').height(AllWidth);
+    }else if(window.orientation == 180||window.orientation === 0){
+    	$(".thwartwise").css("display","none");
+    	Main.show();
+    }
+    window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", transverse, false);
+})();
+
+
+// 透明度渐变通用动画
+var opacityZ = {
+	goOut:{
+		opacity : 0.8
+	},
+	goIn:{
+		opacity : 1
+	}
+}
+
+var durationTime = {
+	oneFive:{
+		duration : 150
+	}
+}
+
+//箭头移动动画
+var jianTouMove = {
+	goIng:{
+		left : '+=5px'
+	},
+	back:{
+		left :'-=5px'
+	}
+}
+
+//鼠标放置箭头移动
+function hoverArrowMoveFun(elent){
+	elent.hover(function(){
+		$(this).children('span').stop().velocity(jianTouMove.goIng,durationTime.oneFive);
+	},function(){
+		$(this).children('span').stop().velocity(jianTouMove.back,durationTime.oneFive);
+	});
+}
+
+//鼠标放置透明度改变函数
+function hoverOpacityFun(elent){
+	elent.hover(function(){
+		$(this).velocity(opacityZ.goOut,durationTime.oneFive);
+	},function(){
+		$(this).velocity(opacityZ.goIn,durationTime.oneFive);
+	});
+}
+
+//选择当前导航，更改样式#918948
+function selectMenuFun(num){
+	$('.menu-list').children('li:eq('+num+')').addClass('menu-select');
+	$('.mob-menu-box-ul').children('li:eq('+num+')').addClass('mob-menu-ok');
+}
+
+//奇数列增加边距
+function oddBoxAddMargin(elent){
+	if(parseInt(AllWidth) > 768){
+		for(var i = 0;i < elent.length;i++){
+			if(i%3 == 1){
+				elent.eq(i).css({
+					'margin-left' : '2%',
+					'margin-right' : '2%'
+				});
+			}
+		};
+	}
+}
+
+//增加查看更多图片加号按钮
+function seeMoveImgBotton(){
+	if(parseInt(AllWidth) > 768){
+		var addImgFather = $('.move-img');
+		$('<span class="add-img"></span>').appendTo(addImgFather);
+	}
+}
+
+//更换kv图片
+function changeKvImgFun(num){
+	var allWidth = $(window).width();
+	var inHref = window.location.host;
+	if(parseInt(allWidth) > 768){
+		var menuBannerKvImg = $('.menu-banner-box').find('img');
+		menuBannerKvImg.attr('src','http://'+inHref+'/app/public/images/kv/kv-'+num+'.jpg');
+	}else{
+		var menuBannerMenuKvImg = $('.mob-menu-banner-box').find('img');
+		menuBannerMenuKvImg.attr('src','http://'+inHref+'/app/public/images/mobile/kv/kv-'+num+'.jpg');
+	}
+}
+
+//设置menu窗口大小
+function menuBobile(){
+	var mobMenuBox = $('.mob-menu-box');
+	mobMenuBox.css({
+		'height' : AllHeight
+	})
+
+	//打开侧边栏
+	var closeBtn = $('.mob-menu-box > span');
+	var menuBtn = $('.mob-botton-box');
+	menuBtn.click(function(){
+		mobMenuBox.css('left','-235px');
+	});
+	closeBtn.click(function(){
+		mobMenuBox.css('left','65px');
+	})
+}
+
+//回到顶部
+function goToTop(){
+	// if(AllWidth > 768){
+		$(".foot-right").append("<div></div>");//全局添加按钮
+		$(".foot-right").children("div").addClass("mob-gotop");
+
+		var mobGoTop = $('.mob-gotop');
+
+		mobGoTop.on('click',function(){
+			$('body').animate({scrollTop:0},500);
+		})
+	// }
+};
+
+
+
+//固定导航栏
+function guDing(){
+	var menuBox = $('.menu-box');
+	var menuBanMain = $('.menu-ban-main');
+	var distanceTop = $('.distance-top');
+	var c24Hour = $('.c-24hour');
+	//--指定元素到视窗的距离计算公式
+	//--指定元素到文档顶部的距离减去滚动条滚动的距离
+	//如果高度低于指定元素就固定定位在顶部
+	//如果高度高于指定元素就绝对定位在底部
+	//但是高于指定元素的判断决定性是banner下面的一个div必须有一个指定类名
+	//
+	$(window).scroll(function(){
+		var winScrollTop = $(window).scrollTop();
+		var menuBoxTop = menuBox.offset().top;
+		var distanceOffTop = distanceTop.offset().top;
+
+		if(parseInt(menuBoxTop - winScrollTop) <= 0 
+			&& parseInt(distanceOffTop - winScrollTop) <= 85 
+			&& parseInt(AllWidth) > 768){
+			if(menuBox.css('position') == 'absolute'){
+				c24Hour.stop().fadeIn();
+				menuBox.css({
+					'position':'fixed',
+					'top' : 0,
+					'left' : 0,
+					'bottom' : 'auto'
+				});
+				$('.mob-gotop').fadeIn();
+			}
+		}else{
+			if(menuBox.css('position') == 'fixed'){
+				c24Hour.stop().fadeOut();
+				menuBox.css({
+					'position':'absolute',
+					'bottom' : 0,
+					'left' : 0,
+					'top' : 'auto'
+				});
+				$('.mob-gotop').fadeOut();
+			}
+		}
+
+		//手机端导航置顶
+		if(parseInt(AllWidth) < 768){
+			var menuLogo = $('.menu-logo');
+			var winScrollTop = $(window).scrollTop();
+			var menuLogoTop = menuBox.offset().top;
+			if(parseInt(menuLogoTop) >= 42){
+				if(menuLogo.css('position') == 'absolute'){
+					menuLogo.css({
+						'position':'fixed'
+					});
+					$('.mob-menu-botton').css({
+						'position':'fixed',
+						'top':0,
+						'right':0
+					});
+				}
+			}else{
+				if(menuLogo.css('position') == 'fixed'){
+					menuLogo.css({
+						'position':'absolute'
+					});
+					$('.mob-menu-botton').css({
+						'position':'absolute',
+						'top':'42px',
+						'right':0
+					});
+				}
+			}
+		}
+
+	});	
+
+	
+}
+
+
+(function(){
+	var menuBox = $('.menu-box');
+	// alert(menuBox.find('img').eq(1).height());
+	if(parseInt(AllHeight) < 750){
+		menuBox.css({
+			'position':'fixed',
+			'top' : 0,
+			'left' : 0,
+			'bottom' : 'auto'
+		})
+	}
+})();

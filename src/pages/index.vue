@@ -1,12 +1,14 @@
 <template>
-  <div class="hello">
+  <div class="webSite">
     <headerBar></headerBar>
-
+    <!-- <test></test> -->
   </div>
 </template>
 
 <script>
 import headerBar from './../components/headerBar'
+import test from './../components/test'
+
 export default {
   name: 'Index',
   data () {
@@ -15,7 +17,8 @@ export default {
     }
   },
   components:{
-      headerBar
+      headerBar,
+      test
   }
 }
 </script>
