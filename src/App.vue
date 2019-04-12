@@ -14,6 +14,6 @@ export default {
 <style>
 @import './assets/css/style.css';
 body{
-  background: #ada;
+  /* background: #ada; */
 }
 </style>
