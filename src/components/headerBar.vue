@@ -3,22 +3,30 @@
     <div class="menu-ban-main">
       <div class="menu-logo">
         <div class="menu-logo-box">
-          <a href="javascrpt:;" class="f-left">
+          <!-- <a href="javascrpt:;" class="f-left">
             <img src="./../assets/imgs/index/logo.png">
-          </a>
-          <router-link class="back-home" to="/">首页</router-link>
+          </a> -->
+          <router-link class="back-home" to="/"><span class="name">金铂利</span></router-link>
           <div class="f-right menu-fc">
-            <a href="javascrpt:;" style="float: left; opacity: 1;" class=""><img src="./../assets/imgs/index/24hours.jpg"></a>
-            <a class="callme" href="javascrpt:;" style="margin-left: 10px; opacity: 1;"><img src="./../assets/imgs/index/zxzx.jpg"></a>
+            <div class="right1">
+              <p><i></i>24小时服务专线</p>
+              <p>028-89898989</p>
+            </div>
+            <div class="right2">
+              <i></i>
+              在线咨询
+            </div>
+            <!-- <a href="javascrpt:;" style="float: left; opacity: 1;" class=""><img src="./../assets/imgs/index/24hours.jpg"></a>
+            <a class="callme" href="javascrpt:;" style="margin-left: 10px; opacity: 1;"><img src="./../assets/imgs/index/zxzx.jpg"></a> -->
           </div>
         </div>
       </div>
       <div class="menu-banner">
         <div class="swiper-container">
           <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="../assets/imgs/index/banner1.jpg"/></div>
-              <div class="swiper-slide"><img src="../assets/imgs/index/banner2.jpg"/></div>
-              <div class="swiper-slide"><img src="../assets/imgs/index/banner3.jpg"/></div>
+              <div class="swiper-slide"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555408851847&di=1dd16fac92c619f31c956157ca590669&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201301%2F15%2F20130115190821_hYhzW.jpeg"/></div>
+              <div class="swiper-slide"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555408851846&di=7c4af93c5256c11e526ee94efa2e268e&imgtype=0&src=http%3A%2F%2Fp3.so.qhmsg.com%2Ft01214e95af3a46efb8.png"/></div>
+              <!-- <div class="swiper-slide"><img src="../assets/imgs/index/banner3.jpg"/></div> -->
           </div>
           <!-- 如果需要导航按钮 -->
           <!-- <div class="swiper-button-prev"></div>
@@ -50,13 +58,10 @@ export default {
   data () {
     return {
       menuList:[
-        {text:'环境服务',type:"scenery",link:'/scenery'},
-        {text:'案例展示',type:"themes",link:'/theme'},
-        {text:'服务流程',type:"rocess",link:'/'},
-        {text:'客户评价',type:"reviews",link:'/'},
-        {text:'费用咨询',type:"cost",link:'/'},
-        {text:'生前契约',type:"contract",link:'/'},
-        {text:'加入我们',type:"join",link:'/'}],
+        {text:'服务项目',type:"serviceItem",link:'/serviceItem'},
+        {text:'服务流程',type:"serviceProcess",link:'/serviceProcess'},
+        {text:'展示',type:"exhibition",link:'/exhibition'},
+        {text:'生前契约',type:"contract",link:'/contract'}],
       menuFixed:false
     }
   },
@@ -76,9 +81,9 @@ export default {
     },
     handleScroll(){
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-      console.log(scrollTop)
-      var offsetTop = document.querySelector('#menu-box').offsetTop
-      if (scrollTop > offsetTop) {
+      var menuHeight = document.querySelector('#menu-box').clientHeight;
+      var bannerHeight = document.querySelector('.menu-banner').clientHeight;
+      if (scrollTop > bannerHeight-menuHeight) {
         this.menuFixed = true
       } else {
         this.menuFixed = false
@@ -110,6 +115,57 @@ export default {
     .menu-logo-box{
       max-width: 1200px;
       margin: 0 auto;
+      .back-home{
+        line-height: 2em;
+        .name{
+          font-size: 1.5em;
+        }
+      }
+      .f-right{
+        color: #fff;
+        font-size: 16px;
+        text-align: center;
+        line-height: 20px;
+        display:table-cell;
+        vertical-align: middle;
+        .right1{
+          float: left;
+          width: 240px;
+          height: 85px;
+          background: #267c8b;
+          margin-right: 20px;
+          line-height: 30px;
+          p:nth-of-type(1){
+            padding-top: 13px;
+            i{
+              display: inline-block;
+              width: 24px;
+              height: 24px;
+              background: url('../assets/imgs/index/phone-icon.png') no-repeat;
+              background-size: 100%;
+              position: relative;
+              top: 4px;
+              right: 8px;
+            }
+          }
+        }
+        .right2{
+          float: right;
+          width: 240px;
+          height: 85px;
+          background: #a59053;
+          line-height: 85px;
+          i{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: url('../assets/imgs/index/zixun-icon.png') no-repeat;
+            background-size: 100%;
+            position: relative;
+            top: 10px;
+          }
+        }
+      }
     }
   }
   .menu-banner{

@@ -20,12 +20,12 @@ import headerBar from './../components/headerBar'
 import contentBar from './../components/contentBar'
 
 export default {
-  name: 'Index',
+  name: 'serviceItem',
   data () {
     return {
-      type:'scenery',//环境服务
+      type:'serviceItem',//服务项目
       contentTitle:{
-        title:'环境服务',
+        title:'服务项目',
         des:[
           '这里是一个别具一格的悼念场所，像一个富有格调酒店或一个充满情感的会所，',
           '与大家印象里的阴森恐怖、嘈杂纷扰相去甚远，治丧配套、生活配套、休闲配套一应俱全，',

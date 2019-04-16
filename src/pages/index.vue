@@ -4,8 +4,8 @@
     <div class="content-box">
      <div class="text-center stop-main distance-top">
        <div class="container">
-          <h2 class="shop-title">正宗安乐堂<span></span>真正好服务</h2>
-          <div class="shops container-fluid">
+          <h2 class="shop-title">公 司 简 介</h2>
+          <!-- <div class="shops container-fluid">
             <div class="row">
               <div class="shop col-md-6" v-for="(item,index) in shops" :key="index">
                 <img :src="item.pic">
@@ -15,11 +15,11 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="shop-intro">
             <p v-for="(item,index) in intros" :key='index'>{{item}}</p>
           </div>
-          <div class="movings">
+          <!-- <div class="movings">
             <div class="moving-head">
               <h2 class="moving-title">感动瞬间</h2>
               <p v-for="(item,index) in movingIntro" :key="index">{{item}}</p>
@@ -38,6 +38,17 @@
                 更多<span></span>
               </div>
             </div>
+          </div> -->
+       </div>
+       <div class="container">
+          <h2 class="shop-title">殡  葬  全  程  一  条  龙  服  务</h2>
+          <div class="shop-intro">
+            <p style="color:#1296db">
+              殡葬服务包括: 遗体接运-清洗更衣-寿衣全套-遗体冷藏-整容化妆-遗像制作-骨灰盒-鲜花、花圈制作-告别会-定时火化-民俗用品全套-专业殡仪师全程服务
+            </p>
+            <p style="font-weight:bold">
+              <span style="color:#ee5e7b">家属需准备:</span> 逝者死亡证明、逝者身份证、经办人身份证
+            </p>
           </div>
        </div>
      </div>
@@ -62,10 +73,10 @@ export default {
        name:'沙坪坝区新桥安乐堂'
      }],
      intros:[
-       '重庆安乐堂是重庆家喻户晓的专业殡葬服务机构，',
-       '是香港联交所上市企业——福寿园国际集团旗下公司，目前仅有渝中菜园坝、沙坪坝凤鸣山两个经营店。',
-       '14年来，安乐堂已经完成了30000余个生命托付，践行着“让告别变得美丽”的使命。',
-       '2015年安乐堂重装登场，24个精品守灵厅和200名专业服务人员将为您提供更优质的服务。'
+       '金铂利好金铂利好金铂利好金铂利好金铂利好金铂利好',
+       '金铂利不错金铂利不错金铂利不错金铂利不错金铂利不错金铂利不错金铂利不错',
+       '金铂利可以金铂利可以金铂利可以金铂利可以金铂利可以',
+       '金铂利棒棒金铂利棒棒金铂利棒棒金铂利棒棒金铂利棒棒金铂利棒棒金铂利棒棒金铂利棒棒'
      ],
      movingIntro:[
        '安乐堂走进每个逝者的人生，根据逝者的职业、遗愿、喜好或家属需要传递的情感',
@@ -147,7 +158,7 @@ export default {
         }
     }
     .shop-intro{
-      margin:40px 0;
+      margin-bottom:40px;
       p{
         font-size: 1.1em;
         line-height: 1.8em;
