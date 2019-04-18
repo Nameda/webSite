@@ -12,12 +12,14 @@
         </div>
       </div>
     </div>
+    <bottomBar></bottomBar>
   </div>
 </template>
 
 <script>
 import headerBar from './../components/headerBar'
 import contentBar from './../components/contentBar'
+import bottomBar from './../components/bottomBar'
 
 export default {
   name: 'exhibition',
@@ -37,7 +39,8 @@ export default {
   },
   components:{
       headerBar,
-      contentBar
+      contentBar,
+      bottomBar
   }
 }
 </script>

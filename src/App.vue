@@ -1,13 +1,18 @@
 <template>
   <div id="app">
     <router-view/>
+    <slideBar></slideBar>
   </div>
 </template>
 
 <script>
+import slideBar from './components/slideBar'
 
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+      slideBar
+  }
 }
 </script>
 
