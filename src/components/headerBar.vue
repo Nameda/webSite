@@ -3,9 +3,9 @@
     <div class="menu-ban-main">
       <div class="menu-logo">
         <div class="menu-logo-box">
-          <!-- <a href="javascrpt:;" class="f-left">
-            <img src="./../assets/imgs/index/logo.png">
-          </a> -->
+           <a href="javascrpt:;" class="f-left">
+            <img src="./../assets/imgs/index/logo_1.png" height="62" width="243">
+          </a>
           <router-link class="back-home" to="/"><span class="name">金铂利</span></router-link>
           <div class="f-right menu-fc">
             <div class="right1">
@@ -24,9 +24,9 @@
       <div class="menu-banner">
         <div class="swiper-container">
           <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555408851847&di=1dd16fac92c619f31c956157ca590669&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201301%2F15%2F20130115190821_hYhzW.jpeg"/></div>
-              <div class="swiper-slide"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555408851846&di=7c4af93c5256c11e526ee94efa2e268e&imgtype=0&src=http%3A%2F%2Fp3.so.qhmsg.com%2Ft01214e95af3a46efb8.png"/></div>
-              <!-- <div class="swiper-slide"><img src="../assets/imgs/index/banner3.jpg"/></div> -->
+              <div class="swiper-slide"><img src="./../assets/imgs/index/1.jpg"  height="700" width="1920"/></div>
+              <div class="swiper-slide"><img src="./../assets/imgs/index/2.jpg"  height="700" width="1920"/></div>
+              <div class="swiper-slide"><img src="./../assets/imgs/index/3.jpg" height="700" width="1920"/></div>
           </div>
           <!-- 如果需要导航按钮 -->
           <!-- <div class="swiper-button-prev"></div>
