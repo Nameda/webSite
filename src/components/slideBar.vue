@@ -4,18 +4,22 @@
           <div class="num">199-2345-6789</div>
           <div class="txt"><span></span>24小时服务热线</div>
       </div>
-      <div class="zixun">
+      <div class="zixun"  @click="showWx()">
           <div><span></span>在线咨询</div>
       </div>
+      <wxPop :isShow="isShowWxPop" @showWx="showWx"></wxPop>
   </div>
 </template>
 
 <script>
+import wxPop from './wxPop'
+
 export default {
   name: 'slideBar',
   data () {
     return {
-      isShow:false
+      isShow:false,
+      isShowWxPop:false
     }
   },
   mounted(){   
@@ -23,7 +27,9 @@ export default {
     window.addEventListener('scroll', this.handleScroll)
   },
   methods: {
-   
+    showWx(){
+      this.isShowWxPop = !this.isShowWxPop;
+    },
     handleScroll(){
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       var logoHeight = document.querySelector('.menu-logo').clientHeight;
@@ -37,6 +43,9 @@ export default {
   destroyed () {
     window.removeEventListener('scroll', this.handleScroll)
   },
+  components:{
+    wxPop
+  }
 }
 </script>
 

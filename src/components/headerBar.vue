@@ -12,7 +12,7 @@
               <p><i></i>24小时服务专线</p>
               <p>028-89898989</p>
             </div>
-            <div class="right2">
+            <div class="right2" @click="showWx()">
               <i></i>
               在线咨询
             </div>
@@ -42,12 +42,15 @@
           </ul>
         </div>
       </div>
+      <wxPop :isShow="isShow" @showWx="showWx"></wxPop>
     </div>
   </div>
 </template>
 
 <script>
 import Swiper from 'swiper';
+import wxPop from './wxPop'
+
 export default {
   name: 'headerBar',
   props:{
@@ -62,7 +65,8 @@ export default {
         {text:'服务流程',type:"serviceProcess",link:'/serviceProcess'},
         {text:'展示',type:"exhibition",link:'/exhibition'},
         {text:'生前契约',type:"contract",link:'/contract'}],
-      menuFixed:false
+      menuFixed:false,
+      isShow:false
     }
   },
   mounted(){
@@ -88,11 +92,17 @@ export default {
       } else {
         this.menuFixed = false
       }
+    },
+    showWx(){
+      this.isShow = !this.isShow;
     }
   },
   destroyed () {
     window.removeEventListener('scroll', this.handleScroll)
   },
+  components:{
+    wxPop
+  }
 }
 </script>
 
@@ -135,6 +145,10 @@ export default {
           background: #267c8b;
           margin-right: 20px;
           line-height: 30px;
+          cursor: pointer;
+          &:hover{
+            opacity: 0.8;
+          }
           p:nth-of-type(1){
             padding-top: 13px;
             i{
@@ -155,6 +169,10 @@ export default {
           height: 85px;
           background: #a59053;
           line-height: 85px;
+          cursor: pointer;
+          &:hover{
+            opacity: 0.8;
+          }
           i{
             display: inline-block;
             width: 30px;
@@ -240,6 +258,36 @@ export default {
           }
         }
       }
+    }
+  }
+  @media screen and (max-width: 768px){
+    .menu-logo{
+      height: 65px;
+      line-height: 65px;
+    }
+    .menu-box {
+        height: 100px;
+        .menu-box-inside{
+          width:100%;
+          .menu-list{
+            margin:0;
+            li{
+              float: left !important;
+              text-align: center !important;
+              width: 33.3% !important;
+              height: 50px !important;
+              line-height: 50px !important;
+              border: none !important;
+              background: #287b8b !important;
+              font-size: 1.2em !important;
+              a{
+                p{
+                  top: -4px;
+                }
+              }
+            }
+          }
+        }
     }
   }
 }

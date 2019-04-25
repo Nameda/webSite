@@ -2,16 +2,25 @@
   <div id="app">
     <router-view/>
     <slideBar></slideBar>
+    <botContact></botContact>
   </div>
 </template>
 
 <script>
 import slideBar from './components/slideBar'
+import botContact from './components/botContact'
 
 export default {
   name: 'App',
   components:{
-      slideBar
+      slideBar,
+      botContact
+  },
+  data () {
+    return {
+    }
+  },
+  methods:{
   }
 }
 </script>
