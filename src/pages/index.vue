@@ -66,10 +66,10 @@ export default {
   data () {
     return {
      shops:[{
-       pic:require('../assets/imgs/index/yzanletang.jpg'),
+       pic:require('../assets/imgs/index/1.jpg'),
        name:'渝中区菜园坝安乐堂'
      },{
-       pic:require('../assets/imgs/index/spbanletang.jpg'),
+       pic:require('../assets/imgs/index/2.jpg'),
        name:'沙坪坝区新桥安乐堂'
      }],
      intros:[
@@ -83,13 +83,13 @@ export default {
        '打造惊喜服务，让逝者及家庭圆梦，创造了无数的感动瞬间。'
      ],
      movings:[{
-        pic:require('../assets/imgs/index/yzanletang.jpg'),
+        pic:require('../assets/imgs/index/4.jpg'),
         name:'渝中区菜园坝安乐堂'
       },{
-        pic:require('../assets/imgs/index/spbanletang.jpg'),
+        pic:require('../assets/imgs/index/2.jpg'),
         name:'沙坪坝区新桥安乐堂'
       },{
-        pic:require('../assets/imgs/index/spbanletang.jpg'),
+        pic:require('../assets/imgs/index/3.jpg'),
         name:'沙坪坝区新桥安乐堂'
       }
 

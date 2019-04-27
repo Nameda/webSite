@@ -1,7 +1,7 @@
 <template>
   <div class="slideBar" v-show="isShow">
       <div class="fullHour">
-          <div class="num">199-2345-6789</div>
+          <div class="num">0871-65342054</div>
           <div class="txt"><span></span>24小时服务热线</div>
       </div>
       <div class="zixun"  @click="showWx()">

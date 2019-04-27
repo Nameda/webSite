@@ -4,13 +4,13 @@
       <div class="menu-logo">
         <div class="menu-logo-box">
            <a href="javascrpt:;" class="f-left">
-            <img src="./../assets/imgs/index/logo_1.png" height="62" width="243">
+            <img src="./../assets/imgs/index/logo.png" height="62" width="243">
           </a>
-          <router-link class="back-home" to="/"><span class="name">金铂利</span></router-link>
+          <router-link class="back-home" to="/"><span class="name">首页</span></router-link>
           <div class="f-right menu-fc">
             <div class="right1">
               <p><i></i>24小时服务专线</p>
-              <p>028-89898989</p>
+              <p>0871-65342054</p>
             </div>
             <div class="right2" @click="showWx()">
               <i></i>
@@ -24,9 +24,9 @@
       <div class="menu-banner">
         <div class="swiper-container">
           <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="./../assets/imgs/index/1.jpg"  height="700" width="1920"/></div>
-              <div class="swiper-slide"><img src="./../assets/imgs/index/2.jpg"  height="700" width="1920"/></div>
-              <div class="swiper-slide"><img src="./../assets/imgs/index/3.jpg" height="700" width="1920"/></div>
+              <div class="swiper-slide"><img src="./../assets/imgs/index/1.jpg"/></div>
+              <div class="swiper-slide"><img src="./../assets/imgs/index/2.jpg"/></div>
+              <div class="swiper-slide"><img src="./../assets/imgs/index/3.jpg"/></div>
           </div>
           <!-- 如果需要导航按钮 -->
           <!-- <div class="swiper-button-prev"></div>
@@ -72,6 +72,7 @@ export default {
   mounted(){
     new Swiper ('.swiper-container', {
       loop: true,
+      autoplay: true,
       // 如果需要前进后退按钮
       // nextButton: '.swiper-button-next',
       // prevButton: '.swiper-button-prev',
@@ -125,6 +126,9 @@ export default {
     .menu-logo-box{
       max-width: 1200px;
       margin: 0 auto;
+      a{
+        color:#656565;
+      }
       .back-home{
         line-height: 2em;
         .name{

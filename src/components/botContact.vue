@@ -1,7 +1,7 @@
 <template>
     <div class="bot-contact">
         <p><i></i>24小时服务专线</p>
-        <p>028-89898989</p>
+        <p>0871-65342054</p>
     </div>
 </template>
 
