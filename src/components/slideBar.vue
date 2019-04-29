@@ -4,9 +4,9 @@
           <div class="num">0871-65342054</div>
           <div class="txt"><span></span>24小时服务热线</div>
       </div>
-      <div class="zixun"  @click="showWx()">
+      <!-- <div class="zixun"  @click="showWx()">
           <div><span></span>在线咨询</div>
-      </div>
+      </div> -->
       <wxPop :isShow="isShowWxPop" @showWx="showWx"></wxPop>
   </div>
 </template>

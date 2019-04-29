@@ -7,18 +7,22 @@
             <img src="./../assets/imgs/index/logo.png" height="62" width="243">
           </a>
           <router-link class="back-home" to="/"><span class="name">首页</span></router-link>
-          <div class="f-right menu-fc">
+          <div v-if="isShowColMenu">
+            集合菜单
+          </div>
+          <div class="f-right menu-fc" v-else>
             <div class="right1">
               <p><i></i>24小时服务专线</p>
               <p>0871-65342054</p>
             </div>
-            <div class="right2" @click="showWx()">
+            <!-- <div class="right2" @click="showWx()">
               <i></i>
               在线咨询
-            </div>
+            </div> -->
             <!-- <a href="javascrpt:;" style="float: left; opacity: 1;" class=""><img src="./../assets/imgs/index/24hours.jpg"></a>
             <a class="callme" href="javascrpt:;" style="margin-left: 10px; opacity: 1;"><img src="./../assets/imgs/index/zxzx.jpg"></a> -->
           </div>
+          
         </div>
       </div>
       <div class="menu-banner">
@@ -66,7 +70,8 @@ export default {
         {text:'展示',type:"exhibition",link:'/exhibition'},
         {text:'生前契约',type:"contract",link:'/contract'}],
       menuFixed:false,
-      isShow:false
+      isShow:false,
+      isShowColMenu:false,
     }
   },
   mounted(){
@@ -78,7 +83,12 @@ export default {
       // prevButton: '.swiper-button-prev',
     })        
 
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('scroll', this.handleScroll);
+    //获取屏幕宽度
+    console.log()
+    if(document.body.clientWidth < 768 ){
+      this.isShowColMenu = true;
+    }
   },
   methods: {
     goOther(link){
