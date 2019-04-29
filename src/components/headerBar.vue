@@ -3,9 +3,9 @@
     <div class="menu-ban-main">
       <div class="menu-logo">
         <div class="menu-logo-box">
-           <a href="javascrpt:;" class="f-left">
+        <router-link class="f-left" to="/">
             <img src="./../assets/imgs/index/logo.png" height="62" width="243">
-          </a>
+            </router-link>
           <router-link class="back-home" to="/"><span class="name">首页</span></router-link>
           <!--定义侧边栏容器-->
           <div class="col-menu-box" v-if="isShowColMenu">
@@ -108,7 +108,7 @@ export default {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       var menuHeight = document.querySelector('#menu-box').clientHeight;
       var bannerHeight = document.querySelector('.menu-banner').clientHeight;
-      if (scrollTop > bannerHeight-menuHeight && !isShowColMenu) {
+      if (scrollTop > bannerHeight-menuHeight && !this.isShowColMenu) {
         this.menuFixed = true
       } else {
         this.menuFixed = false

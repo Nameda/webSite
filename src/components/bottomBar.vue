@@ -19,7 +19,7 @@
     }
     @media screen and (max-width: 768px){
     .footer-main{
-        padding-top: 20px;
+        padding-top: 10px;
     }
 }
 </style>

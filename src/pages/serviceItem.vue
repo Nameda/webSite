@@ -85,7 +85,7 @@ export default {
     .service{
         width:100% !important;
         .intro{
-          font-size: 1.1em !important;
+          font-size: 1.0em !important;
           line-height: 1.3em !important;
           .title{
             font-weight: bold;
