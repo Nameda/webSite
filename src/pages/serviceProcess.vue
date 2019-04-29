@@ -113,4 +113,22 @@ export default {
       margin-bottom: 50px;
     }
   }
+   @media screen and (max-width: 768px){
+    .service{
+        width:100% !important;
+        .intro{
+          font-size: 1.1em !important;
+          line-height: 1.3em !important;
+          .title{
+            font-weight: bold;
+            font-size: 1.3em !important;
+            line-height: 1.4em !important;
+          }
+        }
+    }
+    .mark-txt{
+      font-size: 2em !important;
+    }
+   }
+  
 </style>

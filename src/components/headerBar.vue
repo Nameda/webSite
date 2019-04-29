@@ -7,8 +7,17 @@
             <img src="./../assets/imgs/index/logo.png" height="62" width="243">
           </a>
           <router-link class="back-home" to="/"><span class="name">首页</span></router-link>
-          <div v-if="isShowColMenu">
-            集合菜单
+          <!--定义侧边栏容器-->
+          <div class="col-menu-box" v-if="isShowColMenu">
+            <div class="col-menu-icon" @click="openColMenu"></div>
+            <div class="nav" :class="isShowNav?'on-show':''">
+              <span class="close" @click="openColMenu"></span>
+              <ul>
+                <li v-for="(item,index) in menuList" :class="select==item.type?'menu-select':''" :key="index" @click="goOther(item.link)">
+                  <a href="javascript:;" >·&nbsp;&nbsp;{{item.text}}<p></p></a>                  
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="f-right menu-fc" v-else>
             <div class="right1">
@@ -72,6 +81,7 @@ export default {
       menuFixed:false,
       isShow:false,
       isShowColMenu:false,
+      isShowNav:false
     }
   },
   mounted(){
@@ -98,7 +108,7 @@ export default {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       var menuHeight = document.querySelector('#menu-box').clientHeight;
       var bannerHeight = document.querySelector('.menu-banner').clientHeight;
-      if (scrollTop > bannerHeight-menuHeight) {
+      if (scrollTop > bannerHeight-menuHeight && !isShowColMenu) {
         this.menuFixed = true
       } else {
         this.menuFixed = false
@@ -106,6 +116,10 @@ export default {
     },
     showWx(){
       this.isShow = !this.isShow;
+    },
+    //展示侧边栏
+    openColMenu(){
+      this.isShowNav = !this.isShowNav;
     }
   },
   destroyed () {
@@ -138,11 +152,15 @@ export default {
       margin: 0 auto;
       a{
         color:#656565;
+        img{
+          height:62px;
+          width:243px;
+        }
       }
       .back-home{
         line-height: 2em;
         .name{
-          font-size: 1.5em;
+          font-size: 1.2em;
         }
       }
       .f-right{
@@ -198,6 +216,63 @@ export default {
           }
         }
       }
+      //侧边栏
+      .col-menu-box{
+        float: right;
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 5;
+        .col-menu-icon{
+          display: inline-block;
+          width: 65px;
+          height: 65px;
+          cursor: pointer;
+          background: url('../assets/imgs/index/menu.png') no-repeat;
+          background-size: 100% 100%;
+        }
+        .nav{
+          width: 300px;
+          background: rgba(15,109,126,0.9);
+          color: #fff;
+          z-index: 999;
+          position: absolute;
+          top: 0px;
+          left: 65px;
+          transition: all 0.5s ease;
+          padding: 65px 30px 0 30px;
+          &.on-show{
+            left:-235px;
+          }
+          .close{
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            position: absolute;
+            top: 5px;
+            right: 0;
+            background: url('../assets/imgs/index/close.png') no-repeat;
+            background-size: 60%;
+            background-position: 10px 10px;
+            opacity: 1 !important;
+          }
+          li{
+            line-height: 50px;
+            font-size: 1.1em;
+            color: #fff;
+            a{
+              color: #fff;
+            }
+            &.menu-select{
+              a{
+                color: #979256;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
     }
   }
   .menu-banner{
@@ -210,7 +285,7 @@ export default {
   }
   .menu-box{
     width:100%;
-    z-index: 9;
+    z-index: 5;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -275,12 +350,27 @@ export default {
     }
   }
   @media screen and (max-width: 768px){
+    .menu-logo-box{
+      a {
+        width: 50%;
+        img{
+          width: 100% !important;
+        }
+      }
+      .back-home{
+        margin-left:0;
+        line-height: 65px !important;
+      }
+    } 
     .menu-logo{
       height: 65px;
       line-height: 65px;
+      position: fixed !important;
     }
     .menu-box {
         height: 100px;
+        position: relative;
+        background: transparent;
         .menu-box-inside{
           width:100%;
           .menu-list{

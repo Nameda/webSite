@@ -30,7 +30,7 @@ export default {
             opacity: 0.8;
           }
           p:nth-of-type(1){
-            padding-top: 20px;
+            padding-top: 12px;
             i{
               display: inline-block;
               width: 24px;
@@ -51,7 +51,7 @@ export default {
         left: 0;
         z-index: 9;
         width: 100%;
-        height: 12%;
+        height: 80px;
     }
 }
 </style>

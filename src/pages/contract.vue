@@ -88,7 +88,11 @@ export default {
       text-align: center;
       font-size: 2em;
       font-weight: bold;
+      padding:0 40px;
       margin-bottom: 50px;
+      p{
+        padding-bottom: 20px;
+      }
     }
   }
 </style>

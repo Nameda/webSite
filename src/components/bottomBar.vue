@@ -17,5 +17,10 @@
             color: #656565;
         }
     }
+    @media screen and (max-width: 768px){
+    .footer-main{
+        padding-top: 20px;
+    }
+}
 </style>
 

@@ -33,7 +33,7 @@ export default {
     handleScroll(){
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       var logoHeight = document.querySelector('.menu-logo').clientHeight;
-      if (scrollTop > logoHeight) {
+      if (scrollTop > logoHeight && document.body.clientWidth > 768) {
         this.isShow = true
       } else {
         this.isShow = false
