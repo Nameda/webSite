@@ -233,7 +233,7 @@ export default {
           background-size: 100% 100%;
         }
         .nav{
-          width: 300px;
+          width: 150px;
           background: rgba(15,109,126,0.9);
           color: #fff;
           z-index: 999;
@@ -243,7 +243,7 @@ export default {
           transition: all 0.5s ease;
           padding: 65px 30px 0 30px;
           &.on-show{
-            left:-235px;
+            left:-85px;
           }
           .close{
             width: 50px;
