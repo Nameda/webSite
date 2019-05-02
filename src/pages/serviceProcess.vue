@@ -89,7 +89,8 @@ export default {
           line-height: 100px;
           text-align: center;
           font-size: 4em;
-          background: #f7f7f7;
+          background: #267c8b;
+          color: #fff;
           margin-right: 20px;
         }
         .intro{
@@ -116,9 +117,17 @@ export default {
    @media screen and (max-width: 768px){
     .service{
         width:100% !important;
+        height:auto !important;
+        .rd{
+          width: 80px !important;
+          height: 80px !important;
+          line-height: 80px !important;   
+          font-size: 3em !important;                 
+        }
         .intro{
           font-size: 1.1em !important;
-          line-height: 1.3em !important;
+          line-height: 1.2em !important;
+          vertical-align:top !important;
           .title{
             font-weight: bold;
             font-size: 1.3em !important;
@@ -127,7 +136,7 @@ export default {
         }
     }
     .mark-txt{
-      font-size: 2em !important;
+      font-size: 1.8em !important;
     }
    }
   

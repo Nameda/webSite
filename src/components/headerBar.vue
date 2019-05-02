@@ -378,7 +378,7 @@ export default {
             li{
               float: left !important;
               text-align: center !important;
-              width: 33.3% !important;
+              width: 50% !important;
               height: 50px !important;
               line-height: 50px !important;
               border: none !important;
