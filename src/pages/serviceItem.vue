@@ -28,7 +28,7 @@ export default {
       contentTitle:{
         title:'服务项目',
         des:[
-          '真心托付  真诚服务'
+          '放心托付  真诚服务'
         ]
       },
       lists:[

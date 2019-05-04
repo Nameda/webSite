@@ -4,7 +4,7 @@
       <div class="menu-logo">
         <div class="menu-logo-box">
         <router-link class="f-left" to="/">
-            <img src="./../assets/imgs/index/logo.png" height="62" width="243">
+            <img src="./../assets/imgs/index/logo1.png" height="62" width="243">
             </router-link>
           <router-link class="back-home" to="/"><span class="name">首页</span></router-link>
           <!--定义侧边栏容器-->
@@ -96,7 +96,7 @@ export default {
     window.addEventListener('scroll', this.handleScroll);
     //获取屏幕宽度
     console.log()
-    if(document.body.clientWidth < 768 ){
+    if(document.body.clientWidth <= 768 ){
       this.isShowColMenu = true;
     }
   },
