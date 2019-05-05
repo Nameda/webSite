@@ -16,7 +16,7 @@
               <span class="close" @click="openColMenu"></span>
               <ul>
                 <li v-for="(item,index) in menuList" :class="select==item.type?'menu-select':''" :key="index" @click="goOther(item.link)">
-                  <a href="javascript:;" >·&nbsp;&nbsp;{{item.text}}<p></p></a>                  
+                  <a href="javascript:;" >·&nbsp;&nbsp;{{item.text}}</a>                  
                 </li>
               </ul>
             </div>
