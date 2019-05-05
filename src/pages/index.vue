@@ -5,9 +5,12 @@
      <div class="text-center stop-main distance-top">
        <div class="container">
           <h2 class="shop-title">公 司 简 介</h2>
-          <!-- <div class="shops container-fluid">
+          <div class="shop-intro">
+            <p v-for="(item,index) in intros" :key='index'>{{item}}</p>
+          </div>
+          <div class="shops container-fluid">
             <div class="row">
-              <div class="shop col-md-6" v-for="(item,index) in shops" :key="index">
+              <div class="shop col-md-4" v-for="(item,index) in shops" :key="index" @click="goDetail(item.id)">
                 <img :src="item.pic">
                 <div class="shop-name">
                   <span>{{item.name}}</span>
@@ -15,9 +18,6 @@
                 </div>
               </div>
             </div>
-          </div> -->
-          <div class="shop-intro">
-            <p v-for="(item,index) in intros" :key='index'>{{item}}</p>
           </div>
           <!-- <div class="movings">
             <div class="moving-head">
@@ -66,11 +66,25 @@ export default {
   data () {
     return {
      shops:[{
+       id:0,
        pic:require('../assets/imgs/index/1.jpg'),
-       name:'渝中区菜园坝安乐堂'
+       name:'金铂利'
      },{
-       pic:require('../assets/imgs/index/2.jpg'),
-       name:'沙坪坝区新桥安乐堂'
+       id:1,
+       pic:require('../assets/imgs/index/1.jpg'),
+       name:'金铂利'
+     },{
+       id:2,       
+       pic:require('../assets/imgs/index/1.jpg'),
+       name:'金铂利'
+     },{
+       id:3,
+       pic:require('../assets/imgs/index/1.jpg'),
+       name:'金铂利'
+     },{
+       id:4,
+       pic:require('../assets/imgs/index/1.jpg'),
+       name:'金铂利'
      }],
      intros:[
        '昆明金铂利殡仪有限公司是按国家相关规定注册成立专业从事殡葬系列服务的综合性服务机构。',
@@ -97,6 +111,13 @@ export default {
   components:{
       headerBar,
       bottomBar
+  },
+  methods:{
+    goDetail(id){
+      console.log(id)
+      var link = '/detail?id='+id;
+      this.$router.push({path:link})
+    }
   }
 }
 </script>
@@ -118,6 +139,7 @@ export default {
     }
     .shops{
         .shop{
+          margin-bottom: 20px;
           &:hover{
             cursor: pointer;
             opacity: 0.8;

@@ -5,6 +5,7 @@ import serviceItem from '@/pages/serviceItem'
 import serviceProcess from '@/pages/serviceProcess'
 import exhibition from '@/pages/exhibition'
 import contract from '@/pages/contract'
+import detail from '@/pages/detail'
 
 
 Vue.use(Router)
@@ -36,6 +37,17 @@ export default new Router({
       path: '/contract',
       name: 'contract',
       component: contract
+    },{
+      path: '/detail',
+      name: 'detail',
+      component: detail
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition  //游览器返回记住位置
+    } else {
+      return { x: 0, y: 0 } //滚动到顶
+    }
+  }
 })

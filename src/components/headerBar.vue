@@ -4,8 +4,10 @@
       <div class="menu-logo">
         <div class="menu-logo-box">
         <router-link class="f-left" to="/">
-            <img src="./../assets/imgs/index/logo.png" height="62" width="243">
-            </router-link>
+            <img src="./../assets/imgs/index/logo.png">
+            <span class="line"></span>
+            <span class="name">金铂利</span>
+        </router-link>
           <router-link class="back-home" to="/"><span class="name">首页</span></router-link>
           <!--定义侧边栏容器-->
           <div class="col-menu-box" v-if="isShowColMenu">
@@ -153,12 +155,32 @@ export default {
       a{
         color:#656565;
         img{
-          height:62px;
-          width:243px;
+          width:62px;
+          height:55px;
+        }
+      }
+      .f-left{
+        // display: table-cell;
+        img{
+          margin-top: 13px;
+          float: left;
+        }
+        .line{
+          float: left;          
+          display: inline-block;
+          height: 62px;
+          width: 1px;
+          background:#666;
+          margin:0 20px;
+          margin-top: 14px;
+        }
+        .name{
+          float: left;
+          font-size: 30px;
         }
       }
       .back-home{
-        line-height: 2em;
+        line-height: 85px;
         .name{
           font-size: 1.2em;
         }
@@ -352,14 +374,32 @@ export default {
   @media screen and (max-width: 768px){
     .menu-logo-box{
       a {
-        width: 50%;
+        // width: 50%;
+        margin-right: 10px;
         img{
           width: 100% !important;
         }
       }
+      .f-left{
+         img{
+          width: 60px !important;
+          margin-top: 5px !important;
+        }
+        .line{
+          height: 40px !important;
+          margin:0 10px !important;
+          margin-top: 15px !important;
+        }
+        .name{
+          font-size: 20px !important;
+        }
+      }
       .back-home{
-        margin-left:0;
+        margin-left:0 !important;
         line-height: 65px !important;
+        .name{
+          font-size: 16px !important;
+        }
       }
     } 
     .menu-logo{
