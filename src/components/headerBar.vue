@@ -4,7 +4,7 @@
       <div class="menu-logo">
         <div class="menu-logo-box">
         <router-link class="f-left" to="/">
-            <img src="./../assets/imgs/index/logo1.png" height="62" width="243">
+            <img src="./../assets/imgs/index/logo.png" height="62" width="243">
             </router-link>
           <router-link class="back-home" to="/"><span class="name">首页</span></router-link>
           <!--定义侧边栏容器-->
